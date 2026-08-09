@@ -1,0 +1,718 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+/* ===== Navbar ===== */
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FB4444;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.Navbar img {
+  width: clamp(80px, 15vw, 126px);
+  height: auto;
+  max-height: 60px;
+  margin-left: 15px;
+  flex-shrink: 0;
+  filter: brightness(1.15) contrast(1.1) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+}
+.list {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.list ul {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 50px;
+  padding-top: 0;
+}
+
+.list ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+/* ===== Hero ===== */
+.hero {
+  height: 100px;
+  display: flex;
+  text-align: center;
+  background-color: white;
+}
+
+.hero h1 {
+  font-size: 60px;
+  color: #FB4444;
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 22px;
+}
+
+/* ===== Landing page / Home ===== */
+.landingpage {
+  justify-content: center;
+  text-align: center;
+}
+
+.image {
+  display: flex;
+  flex-direction: row;            /* Spreads elements horizontally across the row */
+  justify-content: space-between; /* Automatically balances empty layout space */
+  align-items: center;            /* Vertically centers images and text sections */
+  gap: 20px;                      /* Clean structural clearance gap */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 40px 20px;
+}
+
+/* Wrapper divs — control column width/layout only */
+.image1,
+.image2 {
+  width: 28%;   /* both match now, so they sit evenly beside the CTA */
+}
+
+/* Actual <img> elements inside the wrappers get the visual styling */
+.image1 img,
+.image2 img {
+  width: 100%;
+  height: 320px;              /* Structured matching layout height */
+  object-fit: cover;          /* Clean cropping without squeezing asset pixels */
+  border-radius: 12px;        /* Soft premium corner treatment */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Floating element shadow depth */
+  display: block;
+}
+
+/* Centered Call-To-Action Element Styling */
+.image-center-cta {
+  width: 38%;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.image-center-cta h3 {
+  font-size: 28px;
+  color: #000;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+}
+
+.image-center-cta p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.image-center-cta button {
+  background-color: #FB4444;
+  color: white;
+  border: none;
+  padding: 12px 35px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(251, 68, 68, 0.3);
+}
+
+.image-center-cta button:hover {
+  background-color: #d63333;
+  transform: translateY(-2px);
+}
+
+/* Removed the old blanket ".home img" width/height rule —
+   it was overriding .image1/.image2 img sizing above.
+   If you need default sizing for OTHER images inside .home
+   (not the two in .image), scope it more narrowly, e.g.:
+   .home > img { ... } */
+
+.home h1 {
+  color: #EB2727;
+  font-family: 'Inter Regular';
+  font-size: clamp(28px, 6vw, 48px);
+  line-height: 1.15;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.home h2 {
+  color: #000;
+  font-family: 'Inter Regular';
+  font-size: 40px;
+  text-align: left;
+}
+
+.home p {
+  color: #000;
+  font-family: 'Inter Regular';
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* ===== Mission ===== */
+.mission {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.mission h3 {
+  font-size: 30px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.mission p {
+  font-size: 18px;
+  height: 1.6px;
+  max-width: 700px;
+}
+
+/* ===== Theme banner ===== */
+.theme {
+  position: relative;
+  width: 100%;
+}
+
+.theme img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+.theme-text {
+  position: absolute;
+  top: 80px;
+  left: 30px;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.theme-text p {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* ===== About ===== */
+.about {
+  background-image: url("./assets/robotics.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about h1 {
+  color: #fff;
+  font-family: 'Inter Regular';
+  font-size: 48px;
+  text-align: left;
+}
+
+.about h2 {
+  color: #fff;
+  font-family: 'Inter Regular';
+  font-size: 40px;
+}
+
+.about h4 {
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.about p {
+  color: #fff;
+  font-family: 'Inter Regular';
+  font-size: 20px;
+}
+
+.about button {
+  color: #000;
+  border-radius: 15px;
+}
+
+/* ===== Stats ===== */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 25px 40px;
+  text-align: center;
+  min-width: 140px;
+}
+
+.stat-number {
+  font-size: 42px;
+  font-weight: 700;
+  color: #FB4444;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #fff;
+  margin-top: 6px;
+}
+
+/* ===== Cards ===== */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 280px;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  color: #FB4444;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+
+.card1 {
+  background: #d9d9d9;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  min-height: 220px;
+}
+
+.card1 span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.card1 h2 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 22px;
+}
+
+.card1 p {
+  text-align: center;
+  margin: 20px;
+  line-height: 1.5;
+}
+
+.card1 button {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.card1 button:hover {
+  background: black;
+  color: white;
+}
+
+
+/* ===== Contact ===== */
+.contact-container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.contact-container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  margin-top: 10px;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+  color: #fff;
+}
+
+.contact-container h1 {
+  font-size: 40px;
+  color: #fcfdfc;
+  margin-bottom: 15px;
+}
+
+.contact-container p {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* ===== Contact Form (redesigned) ===== */
+.contact-form {
+  max-width: 420px;
+  margin: 0 auto 40px auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 30px;
+  box-shadow: 0 10px 28px rgba(20, 20, 20, 0.1);
+  border-top: 4px solid #FB4444;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 8px;
+  border: 1px solid #E1E1DE;
+  font-size: 14.5px;
+  font-family: inherit;
+  background: #FAFAF9;
+  color: #1A1A1A;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9A9A97;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #FB4444;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(251, 68, 68, 0.12);
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 4px;
+  background: #FB4444;
+  color: #fff;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 12px rgba(251, 68, 68, 0.25);
+}
+
+.contact-form button:hover {
+  background: #d63333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(251, 68, 68, 0.3);
+}
+
+.contact-form button:active {
+  transform: translateY(0);
+}
+/* ===== Contact Info (redesigned) ===== */
+.contact-info {
+  max-width: 420px;
+  margin: 0 auto 30px auto;
+  padding: 30px 28px;
+  background: #17181C;
+  color: #fff;
+  border-radius: 14px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #FB4444;
+}
+
+.contact-info h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 18px;
+  padding-left: 6px;
+}
+
+.contact-info p {
+  font-size: 14.5px;
+  color: #C7C8CC;
+  margin-bottom: 12px;
+  padding-left: 6px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 26px;
+}
+
+.contact-info p::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FB4444;
+}
+
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+/* ===== Social Links (redesigned) ===== */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 520px;
+  margin: 10px auto 0 auto;
+  padding-top: 8px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 26px;
+  background: #FB4444;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: capitalize;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 6px 16px rgba(251, 68, 68, 0.35);
+}
+
+.social-links a::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.85;
+}
+
+.social-links a:hover {
+  background: #1A1A1A;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(20, 20, 20, 0.3);
+}
+
+.social-links a:active {
+  transform: translateY(-1px);
+}
+/* ===== Contact layout: form + info side by side ===== */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+}
+
+/* Hero image and heading stay full width on their own row */
+.contact-container img {
+  flex: 0 0 100%;
+}
+
+/* Form and info become flexible columns instead of centered blocks */
+.contact-form,
+.contact-info {
+  flex: 1 1 340px;
+  max-width: 380px;
+  margin: 0;
+}
+
+/* Social links stay on their own row below both cards */
+.social-links {
+  flex: 0 0 100%;
+}
+
+@media (max-width: 760px) {
+  .contact-form,
+  .contact-info {
+    flex: 1 1 100%;
+    max-width: 420px;
+  }
+}
+
+/* ===== Navbar visibility & overlap fixes ===== */
+
+/* Push page content down so it's not hidden behind the fixed navbar */
+body {
+  padding-top: 80px;
+}
+
+/* ===== Hamburger button (hidden on desktop) — new, appended only ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ===== Mobile / Tablet Navbar (hamburger menu) — new, appended only ===== */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .list {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #FB4444;
+    flex: none;
+    justify-content: flex-start;
+    transition: max-height 0.3s ease;
+  }
+
+  .list.open {
+    max-height: 500px;
+  }
+
+  .list ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .list ul li {
+    width: 100%;
+  }
+
+  .list ul li a {
+    display: block;
+    width: 100%;
+    padding: 14px 24px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}
