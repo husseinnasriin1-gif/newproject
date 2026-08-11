@@ -27,7 +27,7 @@ function Chatbot() {
     setLoading(true);
 
  try {
-  const res = await fetch("https://adminbackend-production-f7a6.up.railway.app", { // 👈 Change to your Railway domain
+  const res = await fetch("https://adminbackend-production-f7a6.up.railway.app/api/chat", { // 👈 Change to your Railway domain
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ messages: updatedMessages }),
