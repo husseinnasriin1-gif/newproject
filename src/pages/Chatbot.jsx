@@ -26,14 +26,12 @@ function Chatbot() {
     setInput("");
     setLoading(true);
 
-    try {
-      // Using 127.0.0.1 avoids typical localhost IPv6 routing delay drops
-      const res = await
-       fetch("http://127.0.0.1:8080/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: updatedMessages }),
-      });
+ try {
+  const res = await fetch("https://railway.app", { // 👈 Change to your Railway domain
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ messages: updatedMessages }),
+  });
 
       if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
 
