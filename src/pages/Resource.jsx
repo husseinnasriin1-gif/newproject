@@ -8,8 +8,7 @@ const CATEGORIES = [
   { key: 'Software development', label: 'Software Development', icon: '💻', accent: '#F5A623', desc: 'Designing, building, and maintaining computer programs and applications' },
 ];
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8080';
-// authRoutes is mounted at app.use("/", authRoutes) in server.js, so the real path is just "/login"
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
 const LOGIN_URL = `${BACKEND_URL}/api/students/login`;
 
 function Resource() {
