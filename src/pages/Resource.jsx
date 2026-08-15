@@ -8,7 +8,7 @@ const CATEGORIES = [
   { key: 'Software development', label: 'Software Development', icon: '💻', accent: '#F5A623', desc: 'Designing, building, and maintaining computer programs and applications' },
 ];
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8080';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://adminbackend-production-f7a6.up.railway.app';
 const LOGIN_URL = `${BACKEND_URL}/api/students/login`;
 
 function Resource() {
